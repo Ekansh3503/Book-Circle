@@ -9,11 +9,9 @@ A modern React-based frontend application for the BookCircle book sharing platfo
 - [Tech Stack](#tech-stack)
 - [Prerequisites](#prerequisites)
 - [Installation & Setup](#installation--setup)
-- [Development](#development)
 - [Project Structure](#project-structure)
 - [API Integration](#api-integration)
 - [Deployment](#deployment)
-- [Contributing](#contributing)
 
 ## 🎯 Overview
 
@@ -33,10 +31,8 @@ BookCircle Frontend is a responsive web application that provides an intuitive i
 - **Book Management**: Add, edit, and organize personal book collections
 - **Transaction System**: Borrow and lend books with status tracking
 - **Search & Filter**: Advanced book search with multiple filters
-- **Review System**: Rate and review books
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile
 - **Real-time Updates**: Live updates for book availability and transactions
-- **Dark/Light Theme**: User preference-based theme switching
 
 ## 🛠 Tech Stack
 
@@ -64,16 +60,14 @@ Before you begin, ensure you have the following installed:
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://githome.heliossolutions.co:8052/nodejs/bookcircle-frontend.git
-cd bookcircle-frontend/bookcircle
+git clone https://github.com/Ekansh3503/Book-Circle.git
+cd ../Frontend
 ```
 
 ### Step 2: Install Dependencies
 
 ```bash
 npm install
-# or
-yarn install
 ```
 
 ### Step 3: Environment Configuration
@@ -87,15 +81,13 @@ cp .env.example .env
 Update the `.env` file with your backend API URL:
 
 ```env
-VITE_API_BASE_URL=http://localhost:3000/api/v1
+VITE_API_BASE_URL=http://localhost:3000/
 ```
 
 ### Step 4: Start the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
 The application will be available at `http://localhost:5173`
@@ -130,28 +122,10 @@ npm run lint:fix
 npm run format
 ```
 
-### Development Workflow
-
-1. **Start the backend server** (from the backend directory):
-   ```bash
-   cd ../bookcircle-backend
-   npm start
-   ```
-
-2. **Start the frontend development server**:
-   ```bash
-   npm run dev
-   ```
-
-3. **Make changes** to your code
-4. **Test your changes** in the browser
-5. **Run tests** to ensure everything works
-6. **Commit your changes**
-
 ## 📁 Project Structure
 
 ```
-bookcircle/
+Frontend/
 ├── public/
 │   └── vite.svg
 ├── src/
@@ -299,54 +273,6 @@ The `eslint.config.js` file includes:
 - JavaScript best practices
 - Code formatting rules
 - Import/export rules
-
-## 🤝 Contributing
-
-1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feature/new-feature`
-3. **Make your changes**
-4. **Add tests** for new functionality
-5. **Run tests**: `npm test`
-6. **Run linting**: `npm run lint`
-7. **Commit changes**: `git commit -m "Add new feature"`
-8. **Push to branch**: `git push origin feature/new-feature`
-9. **Create a Pull Request**
-
-### Code Style Guidelines
-
-- Use functional components with hooks
-- Follow React best practices
-- Write meaningful component and variable names
-- Add comments for complex logic
-- Keep components small and focused
-- Use TypeScript for better type safety (recommended)
-
-## 🔍 Troubleshooting
-
-### Common Issues
-
-1. **API Connection Error**:
-   - Check if backend server is running
-   - Verify API URL in `.env` file
-   - Check CORS configuration
-
-2. **Build Errors**:
-   - Clear node_modules and reinstall
-   - Check for syntax errors
-   - Verify all imports are correct
-
-3. **Styling Issues**:
-   - Check CSS class names
-   - Verify responsive breakpoints
-   - Check for conflicting styles
-
-## 📞 Support
-
-For support and questions:
-
-- **Email**: frontend-support@bookcircle.com
-- **Issues**: [GitHub Issues](https://githome.heliossolutions.co:8052/nodejs/bookcircle-frontend/-/issues)
-- **Documentation**: [Frontend Docs](docs/)
 
 ## 📝 License
 

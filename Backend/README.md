@@ -16,7 +16,6 @@ A comprehensive Node.js backend API for a book sharing and management platform b
 - [Development](#development)
 - [Testing](#testing)
 - [Deployment](#deployment)
-- [Contributing](#contributing)
 
 ## 🎯 Overview
 
@@ -67,8 +66,8 @@ Before you begin, ensure you have the following installed:
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://githome.heliossolutions.co:8052/nodejs/bookcircle-backend.git
-cd bookcircle-backend
+git clone https://github.com/Ekansh3503/Book-Circle.git
+cd ../Backend
 ```
 
 ### Step 2: Install Dependencies
@@ -118,73 +117,7 @@ npm start
 
 The server will start on `http://localhost:3000`
 
-## ⚙️ Environment Configuration
-
-Create a `.env` file with the following variables:
-
-```env
-# Database Configuration
-DB_USERNAME=postgres
-DB_PASSWORD=1234
-DB_NAME=bookcircle
-DB_HOST=localhost
-DB_PORT=5433
-
-# Application Settings
-NODE_ENV=development
-FRONTEND_URL=http://localhost:5173
-PORT=3000
-
-# JWT Configuration
-JWT_SECRET=your_jwt_secret_key_here_make_it_long_and_random
-
-# Email Configuration (Gmail)
-EMAIL_USER=your_gmail_address@gmail.com
-EMAIL_PASSWORD=your_gmail_app_password
-
-# Cloudinary Configuration
-CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
-CLOUDINARY_API_KEY=your_cloudinary_api_key
-CLOUDINARY_SECRET_KEY=your_cloudinary_secret_key
 ```
-
-### Environment Variables Explained
-
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `DB_USERNAME` | PostgreSQL username | Yes |
-| `DB_PASSWORD` | PostgreSQL password | Yes |
-| `DB_NAME` | Database name | Yes |
-| `DB_HOST` | Database host (use `localhost` for local development) | Yes |
-| `DB_PORT` | Database port (5433 for Docker setup) | Yes |
-| `NODE_ENV` | Environment (development/production) | Yes |
-| `FRONTEND_URL` | Frontend application URL for CORS | Yes |
-| `PORT` | Server port | Yes |
-| `JWT_SECRET` | Secret key for JWT token signing | Yes |
-| `EMAIL_USER` | Gmail address for sending emails | Yes |
-| `EMAIL_PASSWORD` | Gmail app password | Yes |
-| `CLOUDINARY_CLOUD_NAME` | Cloudinary cloud name | Yes |
-| `CLOUDINARY_API_KEY` | Cloudinary API key | Yes |
-| `CLOUDINARY_SECRET_KEY` | Cloudinary secret key | Yes |
-
-## 🗄️ Database Setup
-
-### Using Docker (Recommended)
-
-1. **Start the database**:
-   ```bash
-   docker-compose up -d
-   ```
-
-2. **Check container status**:
-   ```bash
-   docker ps
-   ```
-
-3. **View database logs**:
-   ```bash
-   docker-compose logs db
-   ```
 
 ### Manual PostgreSQL Setup
 
@@ -246,7 +179,7 @@ The application connects to PostgreSQL using the following configuration:
 ## 📁 Project Structure
 
 ```
-bookcircle-backend/
+Backend/
 ├── src/
 │   ├── config/
 │   │   ├── config.js          # Database configuration
@@ -326,43 +259,6 @@ node seedData.js
 - **Utils**: Helper functions and utilities
 - **Config**: Configuration files for database, email, etc.
 
-## 🧪 Testing
-
-### Running Tests
-
-```bash
-# Run all tests
-npm test
-
-# Run tests in watch mode
-npm run test:watch
-
-# Run tests with coverage
-npm run test:coverage
-```
-
-### Test Structure
-
-```
-tests/
-├── unit/           # Unit tests
-├── integration/    # Integration tests
-└── fixtures/       # Test data
-```
-
-## 🚀 Deployment
-
-### Docker Deployment
-
-1. **Build the image**:
-   ```bash
-   docker build -t bookcircle-backend .
-   ```
-
-2. **Run the container**:
-   ```bash
-   docker run -p 3000:3000 bookcircle-backend
-   ```
 
 ### Production Environment
 
@@ -400,83 +296,12 @@ tests/
 - Books have categories and languages
 - Books can have multiple reviews
 
-## 🔧 Troubleshooting
-
-### Common Issues
-
-1. **Database Connection Error**:
-   - Check if Docker container is running
-   - Verify database credentials in `.env`
-   - Ensure port 5433 is available
-
-2. **Migration Errors**:
-   - Check if all migrations are in `.cjs` format
-   - Verify database is accessible
-   - Run `npx sequelize-cli db:migrate:status`
-
-3. **JWT Token Issues**:
-   - Verify `JWT_SECRET` is set in `.env`
-   - Check token expiration settings
-   - Ensure proper token format in requests
-
-4. **File Upload Issues**:
-   - Verify Cloudinary credentials
-   - Check file size limits
-   - Ensure proper MIME types
-
-### Debug Mode
-
-Enable debug logging by setting:
-```env
-NODE_ENV=development
-DEBUG=sequelize:*
-```
-
-## 🤝 Contributing
-
-1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feature/new-feature`
-3. **Make your changes**
-4. **Add tests** for new functionality
-5. **Run tests**: `npm test`
-6. **Commit changes**: `git commit -m "Add new feature"`
-7. **Push to branch**: `git push origin feature/new-feature`
-8. **Create a Pull Request**
 
 ## 📝 License
 
 This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
 
-## 👥 Authors
 
-- **Development Team** - *Initial work* - [Helios Solutions](https://githome.heliossolutions.co)
-
-## 🙏 Acknowledgments
-
-- Express.js community for the excellent framework
-- Sequelize team for the powerful ORM
-- PostgreSQL community for the robust database
-- All contributors who helped improve this project
-
-## 📞 Support
-
-For support and questions:
-
-- **Email**: support@bookcircle.com
-- **Documentation**: [API Documentation](docs/api.md)
-- **Issues**: [GitHub Issues](https://githome.heliossolutions.co:8052/nodejs/bookcircle-backend/-/issues)
-
-## 🔄 Changelog
-
-### Version 1.0.0
-- Initial release
-- User authentication and management
-- Club management system
-- Book management and transactions
-- Review and rating system
-- Email notifications
-- File upload with Cloudinary
-- Docker support
 
 ## 🚀 Quick Start Summary
 
@@ -548,45 +373,5 @@ All API responses follow a consistent format:
 - **Caching**: Redis caching (optional)
 - **Compression**: Gzip compression for responses
 - **Lazy Loading**: Efficient data loading strategies
-
-## 🐳 Docker Commands
-
-```bash
-# Start all services
-docker-compose up -d
-
-# Stop all services
-docker-compose down
-
-# View logs
-docker-compose logs -f
-
-# Rebuild containers
-docker-compose up -d --build
-
-# Remove all data (WARNING: This will delete all data)
-docker-compose down -v
-```
-
-## 🔧 Environment Variables Reference
-
-| Variable | Type | Default | Description |
-|----------|------|---------|-------------|
-| `NODE_ENV` | string | `development` | Environment mode |
-| `PORT` | number | `3000` | Server port |
-| `DB_HOST` | string | `localhost` | Database host |
-| `DB_PORT` | number | `5433` | Database port |
-| `DB_NAME` | string | `bookcircle` | Database name |
-| `DB_USERNAME` | string | `postgres` | Database username |
-| `DB_PASSWORD` | string | `1234` | Database password |
-| `JWT_SECRET` | string | - | JWT signing secret |
-| `FRONTEND_URL` | string | `http://localhost:5173` | Frontend URL for CORS |
-| `EMAIL_USER` | string | - | Email service username |
-| `EMAIL_PASSWORD` | string | - | Email service password |
-| `CLOUDINARY_CLOUD_NAME` | string | - | Cloudinary cloud name |
-| `CLOUDINARY_API_KEY` | string | - | Cloudinary API key |
-| `CLOUDINARY_SECRET_KEY` | string | - | Cloudinary secret key |
-
----
 
 **Happy Coding! 🚀📚**
