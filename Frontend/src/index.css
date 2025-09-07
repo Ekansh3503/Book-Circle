@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+@layer base {
+  @font-face {
+    font-family: "Roboto";
+    src: url("/fonts/roboto-v20-latin-regular.woff2") format("woff2"),
+         url("/fonts/roboto-v20-latin-regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+
+:root {
+  /* Border Radius */
+  --br-radius: 1rem;  /* This is equivalent to Tailwind's 2xl (16px) */ 
+}
+
+@theme {
+  --color-br-blue-light: #E0E8F0;
+  --color-br-blue-regular:#162546;
+  --color-br-blue-medium: #13203C;
+  --color-br-blue-dark: #0F172F;
+  --color-br-blue-skyblue: #22c7d8;
+  --color-br-white: #FFFFFF;
+  --color-br-gray-light: #D9D9D9;
+  --color-br-gray-dark: #B5B5B5;
+  --color-br-green-medium: #00c950;
+  --color-br-red-medium: #fb2c36;
+}
+
+@theme {
+  --animate-fadein: fade-in 6s ease-in;
+  @keyframes fade-in {
+    0%,
+     {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  background-color: #ffffff;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
