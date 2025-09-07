@@ -117,7 +117,6 @@ npm start
 
 The server will start on `http://localhost:3000`
 
-```
 
 ### Manual PostgreSQL Setup
 
